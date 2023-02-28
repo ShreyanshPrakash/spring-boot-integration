@@ -3,8 +3,11 @@ package com.example.demo.controller;
 import com.example.demo.dto.AuthorDto;
 import com.example.demo.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.http.HttpHeaders;
 import java.util.List;
 
 @RestController
@@ -21,7 +24,7 @@ public class AuthorDataController {
     }
 
     @RequestMapping(value = "/{id}", method = {RequestMethod.GET, RequestMethod.POST})
-    public AuthorDto getAuthorById(@PathVariable String id){
+    public AuthorDto getAuthorById(@PathVariable("id") String id){
         return authorService.getAuthorById(id);
     }
 
@@ -31,8 +34,11 @@ public class AuthorDataController {
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public List<AuthorDto> deleteAuthorById(@PathVariable String id){
-        return authorService.deleteAuthorById(id);
+    public ResponseEntity<List<AuthorDto>> deleteAuthorById(@PathVariable("id") String id){
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("name", "SP");
+        List<AuthorDto> response = authorService.deleteAuthorById(id);
+        return new ResponseEntity<List<AuthorDto>>(response, responseHeaders, HttpStatus.OK);
     }
 
 }

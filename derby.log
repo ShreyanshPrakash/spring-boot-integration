@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Feb 28 20:59:49 IST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-0186-98a4-e8e9-0000010c83e0 
+on database directory memory:/Users/shreyanshprakash/Documents/Dev/BE/Spring Boot/spring-boot-integration/39b7fe08-1959-4dca-8bf1-695ddeb69b41 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@251a69d7 
+Loaded from file:/Users/shreyanshprakash/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=19.0.2+7-44
+user.dir=/Users/shreyanshprakash/Documents/Dev/BE/Spring Boot/spring-boot-integration
+os.name=Mac OS X
+os.arch=aarch64
+os.version=13.3
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

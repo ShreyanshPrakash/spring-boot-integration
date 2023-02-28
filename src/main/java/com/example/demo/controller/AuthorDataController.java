@@ -34,11 +34,11 @@ public class AuthorDataController {
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public List<AuthorDto> deleteAuthorById(@PathVariable("id") String id){
+    public ResponseEntity<List<AuthorDto>> deleteAuthorById(@PathVariable("id") String id){
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.add("name", "SP");
         List<AuthorDto> response = authorService.deleteAuthorById(id);
-        return new ResponseEntity<>(response, responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<List<AuthorDto>>(response, responseHeaders, HttpStatus.OK);
     }
 
 }
